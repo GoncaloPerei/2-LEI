@@ -1,0 +1,11 @@
+# Virtual environment
+venv/
+# PyCharm files
+.idea/
+# Python cache
+__pycache__/
+*.pyc
+# Local config / secrets (IMPORTANTE)
+.env
+# Local database (if using SQLite)
+*.db
