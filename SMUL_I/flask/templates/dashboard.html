@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #2d2d2d;
+            margin: 40px;
+        }
+        h1 {
+            color: #1a73e8;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            margin: 6px 0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+</head>
+    <body>
+        <h1>Olá, {{ username }}!</h1>
+        <p>Estas são as tuas tarefas:</p>
+        <ul>
+            {% for task in task_list %}
+                <li class="{% if task.is_done %}done{% endif %}">
+                {{ task.title }}
+                {% if task.is_done %}
+                    ✅
+                {% else %}
+                    ⏳
+                {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
